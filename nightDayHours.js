@@ -15,8 +15,8 @@ function inputValidation(start, end) {
         return "Sisendandmed ei vasta 24-tunnisele kellasüsteemile!";
     }
 
-    const korrektsedMinutid = ["00", "15", "30", "45"];
-    if (!korrektsedMinutid.includes(startSplit[1]) || !korrektsedMinutid.includes(endSplit[1])) {
+    const correctMinutes = ["00", "15", "30", "45"];
+    if (!correctMinutes.includes(startSplit[1]) || !correctMinutes.includes(endSplit[1])) {
         return "Sisendandmed ei ole korrektse intervalliga!";
     }
 }
@@ -34,9 +34,9 @@ function extraMinutes(minutes) {
 }
 
 function nightDayHours(start, end) {
-    let uncorrectInput = inputValidation(start, end);
-    if (uncorrectInput) {
-        return uncorrectInput;
+    let incorrectInput = inputValidation(start, end);
+    if (incorrectInput) {
+        throw Error(incorrectInput);
     }
 
     let [startH, startM] = start.split(":").map(Number);
@@ -82,6 +82,10 @@ function outputToTextFormat(output) {
     return "öö:    " + output[0] + " tundi\npäev:  " + output[1] + " tundi";
 }
 
-console.log(outputToTextFormat(nightDayHours("14:00", "02:30")));
+try {
+    console.log(outputToTextFormat(nightDayHours("14:00", "02:30")));
+} catch (error) {
+    console.error(error.message);
+}
 
 export default nightDayHours;
