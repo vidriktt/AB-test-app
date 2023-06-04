@@ -1,7 +1,7 @@
 # AB test app
 
-<!-- [Link to page](https://vidriktt.github.io/ab-test-app/)
-<br /><br /> -->
+[Link to page](https://vidriktt.github.io/AB-test-app/)
+<br /><br />
 
 ## Available Scripts
 <br />
@@ -35,3 +35,7 @@ Builds app bundle for UI.
 ### `npm run watch-webpack`
 
 Builds app bundle for UI in watch mode.
+
+### `npm run push-dist-to-gh-pages`
+
+Pushes dist folder to subtree branch for GitHub Pages.

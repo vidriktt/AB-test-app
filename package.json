@@ -9,7 +9,8 @@
     "watch": "jest --watch",
     "test-coverage": "jest --coverage",
     "build-webpack": "webpack",
-    "watch-webpack": "webpack --watch"
+    "watch-webpack": "webpack --watch",
+    "push-dist-to-gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
