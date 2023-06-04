@@ -3,13 +3,13 @@ function inputValidation(start, end) {
         return "Sisendandmed ei ole õiges formaadis (string)!";
     } else if (start.includes("-") || end.includes("-")) {
         return "Sisendandmete kellaaeg ei saa olla negatiivne!";
-    } else if (start[2] !== ":" || end[2] !== ":") {
+    } else if (start[2] !== ":" || end[2] !== ":" || start.replace(":", "").length !== 4 || end.replace(":", "").length !== 4) {
         return "Sisendandmed ei ole õiges formaadis (HH:MM)!";
     }
 
     let startSplit = start.split(":");
     let endSplit = end.split(":");
-    if (!startSplit.concat(endSplit).every((item) => { return !isNaN(+item) })) {
+    if (!startSplit.concat(endSplit).every((item) => { return !isNaN(+item) }) || startSplit[1] === "" || endSplit[1] === "") {
         return "Sisendandmete kellaaeg ei koosne numbritest!";
     } else if (startSplit[0] > 23 || endSplit[0] > 23 || startSplit[1] > 59 || endSplit[1] > 59) {
         return "Sisendandmed ei vasta 24-tunnisele kellasüsteemile!";

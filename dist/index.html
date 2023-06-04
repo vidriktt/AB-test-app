@@ -3,14 +3,52 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>AB test app</title>
+    <title>AB testülesanne</title>
 <script defer src="main.bundle.js"></script></head>
 
 <body>
-    <div id="content">
-        <h1 class="text-3xl font-bold underline">
-            Hello world!
+    <div id="content" class="w-1/3 mx-auto p-6">
+        <h1 class="my-10 text-center text-4xl font-bold">
+            AB testülesanne
         </h1>
+
+        <p class="mb-12 pt-6 text-center">
+            <span class="leading-8">Sisesta algus- ja lõppkellaaeg (HH:MM), 15-minutilise intervalliga.<br></span>
+            Programm tagastab info, mitu tundi kellaaegade vahemikust langeb ööajale ja mitu päevasele ajale.<br><br>
+            <span class="text-sm">Päevane aeg:&nbsp 06:00 - 22:00<br>
+                Ööaeg on:&nbsp 22:00 - 06:00</span>
+        </p>
+
+        <div class="w-3/5 grid gap-6 mx-auto md:grid-cols-2">
+            <div>
+                <label for="start-time"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Algus</label>
+                <input type="text" id="start-time"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    value="14:00" required>
+            </div>
+            <div>
+                <label for="end-time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lõpp</label>
+                <input type="text" id="end-time"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    value="02:30" required>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-5">
+            <button id="calculate-btn"
+                class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-200">
+                Arvuta
+            </button>
+        </div>
+
+        <div class="text-center">
+            <div id="output-div" class="mt-8 inline-block text-left whitespace-break-spaces leading-6"></div>
+            <p id="error-p" class="text-red-600 leading-6" hidden>
+                Veateade!<br>
+                <span id="error-msg" class="text-sm"></span>
+            </p>
+        </div>
     </div>
 </body>
 

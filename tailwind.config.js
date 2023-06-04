@@ -3,8 +3,13 @@ module.exports = {
   purge: ['./dist/*.html'],
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          'Lato',
+        ]
+      },
+    },
   },
   plugins: [],
 }
-

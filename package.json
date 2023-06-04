@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./src/index.js",
+    "start": "babel-node ./cli-script.js",
     "test": "jest",
     "watch": "jest --watch",
     "test-coverage": "jest --coverage",

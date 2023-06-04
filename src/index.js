@@ -2,11 +2,21 @@ import "./style.css";
 import nightDayHours from "./modules/nightDayHours";
 
 function outputToTextFormat(output) {
-    return "öö:    " + output[0] + " tundi\npäev:  " + output[1] + " tundi";
+    return "Öö:        " + output[0] + "  tundi\nPäev:    " + output[1] + "  tundi";
 }
 
-try {
-    console.log(outputToTextFormat(nightDayHours("14:00", "02:30")));
-} catch (error) {
-    console.error(error.message);
-}
+const outputDiv = document.getElementById("output-div");
+const errorP = document.getElementById("error-p");
+
+document.getElementById("calculate-btn").addEventListener("click", () => {
+    outputDiv.innerHTML = "";
+    errorP.hidden = true;
+    
+    try {
+        let output = nightDayHours(document.getElementById("start-time").value, document.getElementById("end-time").value);
+        outputDiv.innerHTML = outputToTextFormat(output);
+    } catch (error) {
+        errorP.hidden = false;
+        document.getElementById("error-msg").innerHTML = error.message.replace("!", ".");
+    }
+});
