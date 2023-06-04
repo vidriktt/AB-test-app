@@ -20,10 +20,18 @@ Runs the script file.
 
 Runs the test file for main function nightDayHours.
 
-### `npm watch`
+### `npm run watch`
 
 Runs the test file for main function nightDayHours in watch mode.
 
-### `npm test-coverage`
+### `npm run test-coverage`
 
 Runs the test file for main function nightDayHours with coverage.
+
+### `npm run build-webpack`
+
+Builds app bundle for UI.
+
+### `npm run watch-webpack`
+
+Builds app bundle for UI in watch mode.

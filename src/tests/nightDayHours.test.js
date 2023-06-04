@@ -1,4 +1,4 @@
-import nightDayHours from './nightDayHours';
+import nightDayHours from '../modules/nightDayHours';
 
 describe("nightDayHours function", () => {
 
